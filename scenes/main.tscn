@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://bt7pjcof30012"]
+
+[ext_resource type="Shader" uid="uid://b46upedr7t2ay" path="res://materials/edge_detection.gdshader" id="1_tbgi4"]
+[ext_resource type="Script" uid="uid://dbyv8vwqlx868" path="res://scenes/main.gd" id="1_tefeu"]
+[ext_resource type="Material" uid="uid://dihy3pavse8oq" path="res://materials/light.tres" id="2_tefeu"]
+[ext_resource type="LightmapGIData" uid="uid://bl2bvevei7xx4" path="res://baking_settings.lmbake" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://b4s357dchho4b" path="res://scenes/character_female.tscn" id="5_85g3d"]
+[ext_resource type="PackedScene" uid="uid://dhjps5ai26tme" path="res://scenes/gas_station.tscn" id="5_tefeu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r3fl7"]
+sky_top_color = Color(0.1689159, 0.035902534, 0.33649275, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_jka67"]
+sky_material = SubResource("ProceduralSkyMaterial_r3fl7")
+
+[sub_resource type="Environment" id="Environment_i5arm"]
+background_mode = 2
+sky = SubResource("Sky_jka67")
+fog_enabled = true
+fog_light_color = Color(0.13911122, 0.05267761, 0.27241325, 1)
+volumetric_fog_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_noarx"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a0tk4"]
+render_priority = 0
+shader = ExtResource("1_tbgi4")
+shader_parameter/lightIntensity = 1.25
+shader_parameter/lineAlpha = 0.7
+shader_parameter/useLighting = true
+shader_parameter/lineHighlight = 0.2
+shader_parameter/lineShadow = 0.55
+
+[sub_resource type="BoxMesh" id="BoxMesh_jsk3o"]
+lightmap_size_hint = Vector2i(14, 21)
+add_uv2 = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_7mycd"]
+vertices = PackedVector3Array(-22, 0.6, -7.9904995, -16.5, 0.6, -7.9904995, -16.25, 0.6, -10.2404995, -22, 0.6, -22.2405, -6.75, 0.6, -10.2404995, -6.75, 0.6, -22.2405, -1.75, 0.6, -0.9904995, -1.75, 0.6, -0.4904995, -1, 0.6, -0.2404995, -0.25, 0.6, -1.2404995, -6.25, 0.6, -9.9904995, -2, 0.6, -5.2404995, -0.25, 0.6, -5.2404995, -1, 0.6, 1.0095005, -0.5, 0.6, 1.0095005, 2.5, 0.6, 0.7595005, 22, 0.6, 2.2595005, 22, 0.6, -22.2405, -6.5, 0.6, -3.9904995, -2.25, 0.6, -3.4904995, 2.75, 0.6, 2.5095005, -16, 4.35, -4.4904995, -12.5, 4.35, -4.4904995, -12.5, 4.35, -6.4904995, -16, 4.35, -10.2404995, -11.25, 4.35, -7.9904995, -6.5, 4.35, -8.2404995, -6.5, 4.35, -10.2404995, -15.25, 0.6, 6.7595005, -7.5, 0.6, 6.7595005, -7.75, 0.6, -8.4904995, -15.25, 0.6, -8.7404995, -22, 0.6, 9.0095005, -17.5, 0.6, 9.0095005, -17.5, 0.6, 7.0095005, -16.5, 0.6, 6.7595005, -9.75, 4.85, -7.2404995, -10.75, 4.85, -6.9904995, -11.5, 4.85, -5.9904995, 2.75, 4.85, -6.2404995, 2, 4.85, -6.9904995, -11.5, 4.85, 6.0095005, -10.75, 4.85, 7.0095005, 2, 4.85, 7.0095005, 2.75, 4.85, 6.2595005, -16, 4.35, 4.5095005, -12.5, 4.35, 4.5095005, -0.5, 0.6, 1.7595005, -2.5, 0.6, -0.9904995, -2.75, 0.6, -0.2404995, -2.25, 0.6, 1.7595005, -2.75, 0.6, 1.0095005, -6.25, 0.6, 4.0095005, -2.25, 0.6, 4.0095005, 0.5, 1.35, 1.7595005, 0.5, 1.35, 5.7595005, 1.75, 1.35, 5.7595005, 1.75, 1.35, 1.7595005, 0.5, 1.6, 3.0928345, 1.75, 1.6, 3.0928345, 2.75, 0.6, 4.7595005, 22, 0.6, 5.0095005, 0.25, 0.6, 6.7595005, -0.5, 0.6, 6.0095005, -2.25, 0.6, 6.0095005, -6.25, 0.6, 17.7595, -8, 0.6, 18.0095, -7.75, 0.6, 22.2595, 2.5, 0.6, 6.5095005, 22, 0.6, 22.2595, -12.5, 4.35, 6.5095005, -16, 4.35, 7.5095005, -7.25, 4.35, 17.0095, -7.25, 4.35, 8.0095005, -11.25, 4.35, 8.0095005, -16.5, 4.35, 7.7595005, -16.5, 4.35, 17.0095, -8, 0.6, 11.5095005, -7.5, 0.6, 11.2595005, -7.5, 0.6, 9.0095005, -8, 0.6, 8.5095005, -15.75, 0.6, 8.5095005, -8, 0.6, 16.5095, -7.5, 0.6, 15.7595005, -15.75, 0.6, 16.5095, -22, 0.6, 15.7595005, -17.5, 0.6, 15.7595005, -16, 0.6, 22.2595, -15.75, 0.6, 18.0095, -17.5, 0.6, 17.7595, -22, 0.6, 22.2595)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(4, 2, 5), PackedInt32Array(5, 2, 3), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 5), PackedInt32Array(13, 8, 14), PackedInt32Array(14, 8, 9), PackedInt32Array(14, 9, 15), PackedInt32Array(10, 4, 5), PackedInt32Array(12, 5, 15), PackedInt32Array(15, 5, 16), PackedInt32Array(16, 5, 17), PackedInt32Array(19, 18, 11), PackedInt32Array(11, 18, 10), PackedInt32Array(16, 20, 15), PackedInt32Array(15, 9, 12), PackedInt32Array(23, 22, 21), PackedInt32Array(23, 21, 25), PackedInt32Array(25, 21, 24), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 24), PackedInt32Array(29, 28, 30), PackedInt32Array(30, 28, 31), PackedInt32Array(34, 33, 32), PackedInt32Array(35, 34, 1), PackedInt32Array(1, 34, 0), PackedInt32Array(0, 34, 32), PackedInt32Array(38, 37, 36), PackedInt32Array(36, 40, 39), PackedInt32Array(42, 41, 38), PackedInt32Array(44, 43, 39), PackedInt32Array(39, 43, 36), PackedInt32Array(36, 43, 38), PackedInt32Array(38, 43, 42), PackedInt32Array(21, 22, 45), PackedInt32Array(45, 22, 46), PackedInt32Array(13, 14, 47), PackedInt32Array(6, 7, 48), PackedInt32Array(48, 7, 49), PackedInt32Array(48, 49, 19), PackedInt32Array(19, 49, 18), PackedInt32Array(51, 13, 50), PackedInt32Array(50, 13, 47), PackedInt32Array(51, 52, 49), PackedInt32Array(49, 52, 18), PackedInt32Array(50, 53, 51), PackedInt32Array(51, 53, 52), PackedInt32Array(57, 59, 54), PackedInt32Array(54, 59, 58), PackedInt32Array(58, 59, 56), PackedInt32Array(58, 56, 55), PackedInt32Array(20, 16, 60), PackedInt32Array(60, 16, 61), PackedInt32Array(63, 62, 64), PackedInt32Array(64, 62, 65), PackedInt32Array(53, 64, 52), PackedInt32Array(52, 64, 65), PackedInt32Array(67, 66, 65), PackedInt32Array(68, 60, 61), PackedInt32Array(62, 68, 65), PackedInt32Array(65, 68, 67), PackedInt32Array(67, 68, 61), PackedInt32Array(67, 61, 69), PackedInt32Array(46, 70, 45), PackedInt32Array(45, 70, 71), PackedInt32Array(74, 73, 72), PackedInt32Array(71, 70, 75), PackedInt32Array(75, 70, 74), PackedInt32Array(75, 74, 76), PackedInt32Array(76, 74, 72), PackedInt32Array(78, 77, 79), PackedInt32Array(79, 77, 80), PackedInt32Array(80, 77, 81), PackedInt32Array(83, 82, 77), PackedInt32Array(77, 82, 84), PackedInt32Array(77, 84, 81), PackedInt32Array(32, 33, 85), PackedInt32Array(85, 33, 86), PackedInt32Array(89, 88, 87), PackedInt32Array(85, 86, 89), PackedInt32Array(87, 90, 89), PackedInt32Array(89, 90, 85), PackedInt32Array(88, 66, 87), PackedInt32Array(87, 66, 67)]
+
+[node name="Node3D" type="Node3D" unique_id=1211817950]
+script = ExtResource("1_tefeu")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1714860505]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1378591236]
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1968653413]
+environment = SubResource("Environment_i5arm")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=940595292]
+transform = Transform3D(-0.7241719, 0.027675672, 0.689064, 0, 0.99919444, -0.040131796, -0.6896196, -0.029062314, -0.72358847, 8.454, 0.639, -17.524)
+fov = 46.5
+size = 15.4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=772391064]
+visible = false
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_noarx")
+surface_material_override/0 = SubResource("ShaderMaterial_a0tk4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=527790779]
+transform = Transform3D(0.6417978, 0, 0, 0, 0.2499396, 0, 0, 0, 4.332188, 0, 3.9693108, 3.6429396)
+mesh = SubResource("BoxMesh_jsk3o")
+surface_material_override/0 = ExtResource("2_tefeu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=838242101]
+transform = Transform3D(0.6417978, 0, 0, 0, 0.2499396, 0, 0, 0, 4.332188, 0, 3.9693108, -3.2127562)
+mesh = SubResource("BoxMesh_jsk3o")
+surface_material_override/0 = ExtResource("2_tefeu")
+
+[node name="LightmapGI" type="LightmapGI" parent="SubViewportContainer/SubViewport" unique_id=878013124]
+quality = 3
+generate_probes_subdiv = 3
+light_data = ExtResource("3_o6xl0")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="SubViewportContainer/SubViewport" unique_id=1053644162]
+navigation_mesh = SubResource("NavigationMesh_7mycd")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D" unique_id=1682801355]
+vertices = PackedVector3Array(-0.17051315, 0, -5.176635, -2.1015613, 0, -5.2205772, -2.4234786, 0, -0.96487284, -0.17603564, 0, -1.2067578)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle3D2" type="NavigationObstacle3D" parent="SubViewportContainer/SubViewport/NavigationRegion3D" unique_id=2012290899]
+vertices = PackedVector3Array(-0.11522293, 0, 1.9061694, -2.1363618, 0, 1.7220619, -2.1439466, 0, 6.001647, -0.015519679, 0, 6.0123005)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="gas-station2" parent="SubViewportContainer/SubViewport/NavigationRegion3D" unique_id=1849317089 instance=ExtResource("5_tefeu")]
+
+[node name="character_female" parent="SubViewportContainer/SubViewport" unique_id=1456396162 instance=ExtResource("5_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.246, 0, -5.612)
+move_speed = 3.0

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dhjps5ai26tme"]
+
+[ext_resource type="PackedScene" uid="uid://bq65gfs4lcyww" path="res://models/gas-station.blend" id="1_h7ese"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7ese"]
+size = Vector3(45, 1, 45.481)
+
+[node name="gas-station" unique_id=1849317089 instance=ExtResource("1_h7ese")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane" parent_id_path=PackedInt32Array(866785173) index="0" unique_id=453819302]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D" index="0" unique_id=1945575173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("BoxShape3D_h7ese")
