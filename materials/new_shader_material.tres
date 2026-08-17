@@ -1,0 +1,52 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bpfkf4ajkb8xm"]
+
+[ext_resource type="Shader" uid="uid://dkt5hgr11h24a" path="res://materials/stylized.gdshader" id="1_ehi37"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehi37"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.09
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_72u4d"]
+next_pass = SubResource("StandardMaterial3D_ehi37")
+blend_mode = 2
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.09
+
+[resource]
+render_priority = 0
+next_pass = SubResource("StandardMaterial3D_72u4d")
+shader = ExtResource("1_ehi37")
+shader_parameter/albedo_color = Color(0.2063177, 0.6878082, 0.6923736, 1)
+shader_parameter/albedo_affect = 0.0
+shader_parameter/use_stepped = true
+shader_parameter/steps = 3.0
+shader_parameter/step_smoothness = 0.0
+shader_parameter/shadow_tint = Color(0.7914168, 0.25334492, 0.7910093, 1)
+shader_parameter/shadow_tint_amount = 0.30000000447036
+shader_parameter/specular = 0.0
+shader_parameter/normal_strength = 0.0
+shader_parameter/use_rim = false
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/rim_amount = 2.0
+shader_parameter/rim_smoothness = 0.2
+shader_parameter/rim_mask_shadow = 1.0
+shader_parameter/rim_blend = 1.0
+shader_parameter/use_pattern = false
+shader_parameter/pattern_uv_mode = 2
+shader_parameter/pattern_tiling = 32.0
+shader_parameter/pattern_amount = 0.5
+shader_parameter/pattern_smoothness = 0.5
+shader_parameter/pattern_blend = 0.2
