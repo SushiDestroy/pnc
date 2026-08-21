@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://b4s357dchho4b"]
 
 [ext_resource type="PackedScene" uid="uid://pjb7ftncy6v3" path="res://models/character_female.blend" id="1_v33an"]
+[ext_resource type="Material" uid="uid://daxjw8rje7a16" path="res://materials/ToonMain.tres" id="2_s8yom"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s8yom"]
 height = 1.8232422
 
 [node name="character_female" unique_id=1456396162 instance=ExtResource("1_v33an")]
+script = null
 
-[node name="Armature" parent="." index="0" unique_id=1734928894]
+[node name="Armature" parent="." index="0" unique_id=1486466344]
 transform = Transform3D(-0.01, -8.7422775e-10, 3.821371e-17, 0, -4.3711387e-10, -0.01, 8.7422775e-10, -0.01, 4.3711387e-10, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Armature" index="0" unique_id=257689331]
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=1624965049]
 bones/0/position = Vector3(0.6137886, 1.3260785, -101.67967)
 bones/0/rotation = Quaternion(-0.7034489, 0.032803237, -0.09111232, 0.70411795)
 bones/1/rotation = Quaternion(-0.0025974226, 0.20488517, 0.97831285, -0.030320609)
@@ -65,7 +67,13 @@ bones/61/rotation = Quaternion(0.123131245, -0.07374597, -0.14626983, 0.9787775)
 bones/62/rotation = Quaternion(-0.09222389, -0.08100076, 0.06338025, 0.99041235)
 bones/63/rotation = Quaternion(0.035288572, 0.086109295, -0.12089914, 0.98829323)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=968905778]
+[node name="Beta_Joints" parent="Armature/Skeleton3D" index="0" unique_id=1704080227]
+surface_material_override/0 = ExtResource("2_s8yom")
+
+[node name="Beta_Surface" parent="Armature/Skeleton3D" index="1" unique_id=135702556]
+surface_material_override/0 = ExtResource("2_s8yom")
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1529912305]
 speed_scale = 0.9
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=696216475]
@@ -74,4 +82,3 @@ shape = SubResource("CapsuleShape3D_s8yom")
 debug_fill = false
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="3" unique_id=1451225792]
-path_height_offset = -0.5

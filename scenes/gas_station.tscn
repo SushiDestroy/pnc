@@ -1,13 +1,42 @@
 [gd_scene format=3 uid="uid://dhjps5ai26tme"]
 
 [ext_resource type="PackedScene" uid="uid://bq65gfs4lcyww" path="res://models/gas-station.blend" id="1_h7ese"]
+[ext_resource type="Material" uid="uid://dxtq25fsa3k0f" path="res://materials/ToonMain_blu.tres" id="2_jwdhq"]
+[ext_resource type="Material" uid="uid://dc8wybvnpykov" path="res://materials/ToonMain_brow.tres" id="3_6hev2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7ese"]
 size = Vector3(45, 1, 45.481)
 
-[node name="gas-station" unique_id=1849317089 instance=ExtResource("1_h7ese")]
+[node name="gas-station" unique_id=982427047 instance=ExtResource("1_h7ese")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Plane" parent_id_path=PackedInt32Array(866785173) index="0" unique_id=453819302]
+[node name="Cube" parent="." index="0" unique_id=1865452446]
+material_override = ExtResource("2_jwdhq")
+
+[node name="Cube_001" parent="." index="1" unique_id=1159512045]
+material_override = ExtResource("2_jwdhq")
+
+[node name="Cube_002" parent="." index="2" unique_id=853609195]
+material_override = ExtResource("2_jwdhq")
+
+[node name="Cube_005" parent="." index="5" unique_id=1190123430]
+material_override = ExtResource("2_jwdhq")
+
+[node name="Cube_006" parent="." index="6" unique_id=1687116760]
+surface_material_override/0 = ExtResource("2_jwdhq")
+
+[node name="Cube_007" parent="." index="7" unique_id=1020173106]
+material_override = ExtResource("2_jwdhq")
+
+[node name="Cube_008" parent="." index="8" unique_id=2047588316]
+surface_material_override/0 = ExtResource("2_jwdhq")
+
+[node name="Low poly plymouth car" parent="." index="11" unique_id=1294823391]
+material_override = ExtResource("2_jwdhq")
+
+[node name="Plane" parent="." index="12" unique_id=1053521353]
+material_override = ExtResource("3_6hev2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane" index="0" unique_id=453819302]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D" index="0" unique_id=1945575173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)

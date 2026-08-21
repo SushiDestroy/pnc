@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bq3s7i6w6x0w7"]
+
+[ext_resource type="PackedScene" uid="uid://lundmrwv4kgp" path="res://addons/posterize_to_palette/demo/dae_villages__ancient_greek_bakery/scene.gltf" id="1_emm8h"]
+
+[node name="SketchfabSceneWithAnimations" unique_id=574778259 instance=ExtResource("1_emm8h")]
+
+[node name="Empty_017" parent="Sketchfab_model/5e3ef18f2c0b4e089750470e59120516_fbx/Object_2/RootNode" index="422"]
+transform = Transform3D(299.9543, -5.235721, -2.2886064e-07, 0, -1.3113417e-05, 300, -5.235721, -299.9543, -1.3111419e-05, 854.21265, 2767.28, -1757.3954)
+
+[node name="Empty_018" parent="Sketchfab_model/5e3ef18f2c0b4e089750470e59120516_fbx/Object_2/RootNode/Empty_017" index="6"]
+transform = Transform3D(1, -6.937837e-18, 1.2110019e-19, 6.938894e-18, 0.9998477, -0.017452406, 2.0679515e-25, 0.017452406, 0.9998477, 0.83193564, -0.0013389587, -5.1353426)
+
+[node name="Empty_019" parent="Sketchfab_model/5e3ef18f2c0b4e089750470e59120516_fbx/Object_2/RootNode/Empty_017" index="8"]
+transform = Transform3D(-1, 8.492906e-08, -1.509728e-07, 8.755094e-08, 0.9998477, -0.017452218, 1.4946761e-07, -0.01745222, -0.99984765, -0.8223095, 0.027535915, -5.1353426)
+
+[node name="Empty_020" parent="Sketchfab_model/5e3ef18f2c0b4e089750470e59120516_fbx/Object_2/RootNode" index="440"]
+transform = Transform3D(300, 0, 0, 0, -5.235777, 299.9543, 0, -299.9543, -5.235777, 473.985, 3171.1438, -1757.3942)
+
+[node name="Empty_022" parent="Sketchfab_model/5e3ef18f2c0b4e089750470e59120516_fbx/Object_2/RootNode" index="445"]
+transform = Transform3D(285.3422, -4.980664, 92.49344, 5.2369823, 299.95428, -0.0038977247, -92.47929, 1.6183289, 285.38565, -1705.3264, 5882.0176, -2121.2563)
+
+[node name="Empty_023" parent="Sketchfab_model/5e3ef18f2c0b4e089750470e59120516_fbx/Object_2/RootNode" index="446"]
+transform = Transform3D(299.9543, 5.235721, 2.2886064e-07, 0, -1.3113417e-05, 300, 5.235721, -299.9543, -1.3111419e-05, -1587.4318, 5505.0957, -1793.7463)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = &"Scene"

@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://bw4nmf7fcfv2"]
+
+[ext_resource type="Script" uid="uid://dded36b7uhh0s" path="res://addons/posterize_to_palette/demo/palette_switcher.gd" id="1_gum6x"]
+[ext_resource type="PackedScene" uid="uid://bq3s7i6w6x0w7" path="res://addons/posterize_to_palette/demo/dae_villages__ancient_greek_bakery/sketchfab_scene_with_anim.tscn" id="2_lhstu"]
+[ext_resource type="PackedScene" uid="uid://bnbgjno0t4uv0" path="res://addons/posterize_to_palette/posterize_runtime/posterize_runtime.tscn" id="3_u4i8y"]
+[ext_resource type="Script" uid="uid://xpmbmujxt8af" path="res://addons/posterize_to_palette/demo/camera_gimbal_controller.gd" id="4_lhstu"]
+[ext_resource type="ButtonGroup" uid="uid://wxvs7j7svdly" path="res://addons/posterize_to_palette/demo/palette_group.tres" id="5_u4i8y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2hd1a"]
+
+[sub_resource type="Sky" id="Sky_ps6pv"]
+sky_material = SubResource("ProceduralSkyMaterial_2hd1a")
+
+[sub_resource type="Environment" id="Environment_05o8x"]
+background_mode = 2
+sky = SubResource("Sky_ps6pv")
+
+[node name="RuntimeDemo" type="Node3D" unique_id=1307744411]
+script = ExtResource("1_gum6x")
+runtime_shader = true
+
+[node name="SketchfabSceneWithAnimations" parent="." unique_id=1564186376 instance=ExtResource("2_lhstu")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="PosterizeRuntime" parent="." unique_id=450906855 instance=ExtResource("3_u4i8y")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1872882917]
+environment = SubResource("Environment_05o8x")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2011559750]
+transform = Transform3D(0.67687595, -0.6374788, 0.36804852, 0, 0.49999997, 0.86602545, -0.7360971, -0.5861918, 0.33843794, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 200.0
+
+[node name="OuterGimbal" type="Node3D" parent="." unique_id=334525183]
+script = ExtResource("4_lhstu")
+
+[node name="InnerGimbal" type="Node3D" parent="OuterGimbal" unique_id=1908383529]
+
+[node name="Camera3D" type="Camera3D" parent="OuterGimbal/InnerGimbal" unique_id=1767584103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.427, 7)
+
+[node name="ShaderController" type="Control" parent="." unique_id=297889343]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 274.0
+offset_bottom = 310.0
+
+[node name="ColorRect" type="ColorRect" parent="ShaderController" unique_id=295418764]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3254902, 0.3254902, 0.3254902, 0.5019608)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="ShaderController" unique_id=788173900]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0, 0, 0, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShaderController" unique_id=78990358]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ShaderController/VBoxContainer" unique_id=1609985698]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShaderController/VBoxContainer/MarginContainer" unique_id=1392964594]
+layout_mode = 2
+
+[node name="ShaderEnabledCheckbox" type="CheckBox" parent="ShaderController/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1051450008]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+button_pressed = true
+text = "Shader Enabled"
+
+[node name="SweetieButton" type="Button" parent="ShaderController/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1006911299]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("5_u4i8y")
+text = "SWEETIE-16 Palette (16 Colors)"
+
+[node name="Mode13hButton" type="Button" parent="ShaderController/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1181688641]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("5_u4i8y")
+text = "Mode 13h Palette (248 Colors)"
+
+[node name="MarginContainer" type="MarginContainer" parent="ShaderController/VBoxContainer/MarginContainer/VBoxContainer" unique_id=579484073]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 9
+
+[node name="ReferenceRect" type="ReferenceRect" parent="ShaderController/VBoxContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=895585773]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+size_flags_vertical = 4
+border_color = Color(0, 0, 0, 1)
+editor_only = false
+
+[node name="SwitchToOtherSceneButton" type="Button" parent="ShaderController/VBoxContainer/MarginContainer/VBoxContainer" unique_id=334543681]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 18
+text = "Switch to LUT demo"
+
+[node name="MarginContainer2" type="MarginContainer" parent="ShaderController/VBoxContainer" unique_id=738686148]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="ShaderController/VBoxContainer/MarginContainer2" unique_id=1324309533]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 17
+text = "W/A/S/D to rotate the camera"
+horizontal_alignment = 1
+
+[connection signal="toggled" from="ShaderController/VBoxContainer/MarginContainer/VBoxContainer/ShaderEnabledCheckbox" to="." method="toggle_shader"]
+[connection signal="toggled" from="ShaderController/VBoxContainer/MarginContainer/VBoxContainer/SweetieButton" to="." method="switch_palette" binds= ["sweetie"]]
+[connection signal="toggled" from="ShaderController/VBoxContainer/MarginContainer/VBoxContainer/Mode13hButton" to="." method="switch_palette" binds= ["13h"]]
+[connection signal="pressed" from="ShaderController/VBoxContainer/MarginContainer/VBoxContainer/SwitchToOtherSceneButton" to="." method="switch_scene"]

@@ -15,14 +15,14 @@ dest_files=["res://.godot/imported/character_female.blend-2732acebd90d51fe356e42
 
 nodes/root_type="CharacterBody3D"
 nodes/root_name=""
-nodes/root_script=Resource("uid://cwc6dj2iqgl0e", "res://character_female.gd")
+nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
-meshes/generate_lods=true
+meshes/generate_lods=false
 meshes/create_shadow_meshes=true
 meshes/light_baking=3
 meshes/lightmap_texel_size=0.2
@@ -2099,13 +2099,13 @@ _subresources={
 "materials": {
 "Beta_HighLimbsGeoSG3": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://materials/toooon_blue.tres",
-"use_external/path": "uid://l15kgcopl40"
+"use_external/fallback_path": "res://materials/ToonMain.tres",
+"use_external/path": "uid://daxjw8rje7a16"
 },
 "Beta_Joints_MAT1": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://materials/toooon.tres",
-"use_external/path": "uid://pwhohf3lf6ji"
+"use_external/fallback_path": "res://materials/ToonMain.tres",
+"use_external/path": "uid://daxjw8rje7a16"
 }
 },
 "nodes": {
@@ -2117,9 +2117,9 @@ _subresources={
 }
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
-blender/nodes/punctual_lights=true
-blender/nodes/cameras=true
-blender/nodes/custom_properties=true
+blender/nodes/punctual_lights=false
+blender/nodes/cameras=false
+blender/nodes/custom_properties=false
 blender/nodes/modifiers=1
 blender/meshes/colors=false
 blender/meshes/uvs=true

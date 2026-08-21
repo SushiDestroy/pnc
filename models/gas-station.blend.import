@@ -41,12 +41,20 @@ _subresources={
 "materials": {
 "@MATERIAL:1": {
 "use_external/enabled": true,
-"use_external/path": "uid://3vsub30w3hvq"
+"use_external/path": "uid://dxtq25fsa3k0f"
+},
+"@MATERIAL:2": {
+"use_external/enabled": true,
+"use_external/path": "uid://dxtq25fsa3k0f"
+},
+"@MATERIAL:3": {
+"use_external/enabled": true,
+"use_external/path": "uid://dxtq25fsa3k0f"
 },
 "Material": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://materials/toon.tres",
-"use_external/path": "uid://3vsub30w3hvq"
+"use_external/fallback_path": "res://materials/ToonMain_blu.tres",
+"use_external/path": "uid://dxtq25fsa3k0f"
 }
 }
 }
